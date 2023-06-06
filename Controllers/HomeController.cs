@@ -23,7 +23,60 @@ public class HomeController : Controller
     {
         return View();
     }
+    public IActionResult Habitacion1()
+    {
+        return View();
+    }
 
+    public IActionResult Habitacion2()
+    {
+        return View();
+    }
+
+    public IActionResult Habitacion3()
+    {
+        return View();
+    }
+
+    public IActionResult Habitacion4()
+    {
+        return View();
+    }
+
+    public IActionResult Habitacion5()
+    {
+        return View();
+    }
+    
+    public IActionResult Habitacion6()
+    {
+        return View();
+    }
+    
+    
+    public IActionResult Habitacion7()
+    {
+        return View();
+    }
+    
+    
+    public IActionResult Habitacion8()
+    {
+        return View();
+    }
+    
+    
+    public IActionResult Habitacion9()
+    {
+        return View();
+    }
+    
+    
+    public IActionResult Habitacion10()
+    {
+        return View();
+    }
+    
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
     {
