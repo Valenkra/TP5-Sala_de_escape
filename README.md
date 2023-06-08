@@ -27,4 +27,9 @@ OS DESEAMOS MUCHA SUERTE.
 
 ¡MIL GRACIAS!
 
+# 
+# caballero fantasma: 1419914
+# Protegido: Las ovejas malditas - 58382214
+# Mapa del laberinto: 365
+
 # https://laguaridadelasgargolas.com/
