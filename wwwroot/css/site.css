@@ -17,6 +17,47 @@ html {
   min-height: 100%;
 }
 
+.logo {
+  margin: 5rem;
+}
+
+.frames {
+  display:flex;
+}
+
+iframe {
+  padding: 10px;
+}
+
+.text {
+  background-color: azure;
+  padding: 20px 15px 0.5rem 15px;
+  border-radius: 8px;
+  color:  rgb(33, 68, 70);
+}
+
+#Numero {
+  width: 25rem;
+}
+
+#submit {
+  width: 15.25rem;
+}
+
 body {
   margin-bottom: 60px;
+  background-color: rgb(33, 68, 70);
+  color: aliceblue;
+}
+
+.Forms{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+#submit{
+  width: 22.25rem;
+  padding: 1rem 0;
+  font-size: large;
 }
