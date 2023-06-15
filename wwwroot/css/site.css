@@ -60,4 +60,26 @@ body {
   width: 15vw;
   padding: 1rem 0;
   font-size: large;
+  background-color: aliceblue;
+  border-radius: 12px;
+  font-weight: 600;
+  border: solid rgb(33, 68, 70) 2px;
+}
+
+#submit:hover {
+  background-color: rgb(33, 68, 70);
+  border-radius: 12px;
+  font-weight: 600;
+  border: solid aliceblue 2px;
+  color: aliceblue;
+  transition: border .5s;
+}
+
+#submit-clave {
+
+}
+
+.pista-container {
+  display: flex;
+  
 }

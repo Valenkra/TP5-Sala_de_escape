@@ -15,7 +15,6 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        
         return View();
     }
 
@@ -23,62 +22,28 @@ public class HomeController : Controller
     {
         return View();
     }
-    public IActionResult Habitacion1()
+    [HttpPost] public IActionResult Habitacion(int sala, string clave) 
     {
-        ViewBag.EstadoDeJuego = Escape.GetEstadoJuego();
-        return View();
+        
+        Escape.ResolverSala(sala, clave);
+        if(Escape.GetEstadoJuego() != 5){
+            return View("Habitacion"+ Escape.GetEstadoJuego());
+        }else{
+            return RedirectToAction("Victoria");
+        }
     }
 
-    public IActionResult Habitacion2()
-    {
-        return View();
-    }
-
-    public IActionResult Habitacion3()
-    {
-        return View();
-    }
-
-    public IActionResult Habitacion4()
+    public IActionResult Victoria()
     {
         return View();
     }
 
-    public IActionResult Habitacion5()
-    {
-        return View();
-    }
-    
-    public IActionResult Habitacion6()
-    {
-        return View();
-    }
-    
-    
-    public IActionResult Habitacion7()
-    {
-        return View();
-    }
-    
-    
-    public IActionResult Habitacion8()
-    {
-        return View();
-    }
-    
-    
-    public IActionResult Habitacion9()
-    {
-        return View();
-    }
-    
-    
-    public IActionResult Habitacion10()
-    {
-        return View();
-    }
-    
     public IActionResult Tutorial()
+    {
+        return View();
+    }
+
+    public IActionResult Creditos()
     {
         return View();
     }

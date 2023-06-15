@@ -20,16 +20,18 @@
       <b>¿Estás preparado?</b></p>
 </div>
 <div class= "Forms">
-    <form action="Tutorial">
+    <form asp-area="" asp-controller="Home" asp-action="Tutorial">
         <input type="submit" id="submit" value="Tutorial">
     </form>
 
-    <form action="Habitacion1">
+    <form asp-area="" asp-controller="Home" asp-action="Habitacion">
+        <input type="hidden"  autocomplete="off" name="clave" value="null" placeholder="Ingresar Clave">
+        <input type="hidden"  autocomplete="off" name="sala" value="1">
         <input type="submit" id="submit" value="Comenzar">
     </form>
 
-    <form action="Creditos">
+    <form asp-area="" asp-controller="Home" asp-action="Creditos">
         <input type="submit" id="submit" value="Creditos">
     </form>
-    </div>
+</div>
 

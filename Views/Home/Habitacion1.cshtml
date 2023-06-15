@@ -9,12 +9,17 @@
     <iframe src="https://www.jigsawplanet.com/?rc=play&amp;pid=1e0886b92060&amp;view=iframe" style="width:50%;height:600px" frameborder="0" allowfullscreen="" id="frame"></iframe>
     </div>
 
-    @{
-        string path = "Habitacion" + @ViewBag.EstadoDeJuego + ".cshtml";
-        <div class="validacion">
-            <form action="@path">
-                <input type="submit" id="submit" value="Submit">
-            </form>
-        </div>
-    }
-</div>
+    <div class="validacion">
+        <form asp-area="" asp-controller="Home" asp-action="Habitacion" method="POST">
+            <input type="text"  autocomplete="off" name="clave" placeholder="Ingresar Clave">
+            <input type="hidden"  autocomplete="off" name="sala" value="1">
+            <input type="submit" id="submit-clave" value="Validar">
+        </form>
+    </div>
+
+    <div class="pistas-container">
+        <button onclick="alert('Pista: No todos los escudos tienen algun simbolo...')"> Pista 1 </button>
+        <button onclick="alert('Pista: Contá las estrellas en los escudos...')"> Pista 2 </button>
+        <button onclick="alert('Pista: Ni mas que 6 y ni menos que 3...')"> Pista 3 </button>
+    </div>
+</div>    

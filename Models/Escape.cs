@@ -1,18 +1,13 @@
 class Escape 
 {
-    private static string[] incognitasSalas= new string[10] 
+    private static string[] incognitasSalas= new string[4] 
     {
-        "4", "XII", "2122191524", "1419914", "ABCJLF",
-        "4", "XII", "2122191524", "1419914", "ABCJLF"
+        "4", "XII", "2122191524", "1419914"
     };
     private static int estadoJuego = 0;
-    private static void InicializarJuego(){
-        estadoJuego = 1;
-    }
-
     public static int GetEstadoJuego(){
         if(estadoJuego == 0) {
-            InicializarJuego();
+            estadoJuego = 1;
         }
         return estadoJuego;
     }
