@@ -24,7 +24,9 @@ public class HomeController : Controller
     }
     [HttpPost] public IActionResult Habitacion(int sala, string clave) 
     {
-        
+        if(clave == null){
+            clave = "null";
+        }
         Escape.ResolverSala(sala, clave);
         if(Escape.GetEstadoJuego() != 5){
             return View("Habitacion"+ Escape.GetEstadoJuego());
