@@ -1,11 +1,20 @@
 <div>  
-<h1> La leyenda del duende </h1>
-<p> 
-La Reina para asegurarse que eres de fiar te hace una última pregunta.
-De los escudos de las familias reales ¿cuántos poseen estrellas?
-</p>
-<div class="frames">
-<iframe src="https://www.jigsawplanet.com/?rc=play&amp;pid=36fffcff660a&amp;view=iframe" style="width:50%;height:600px" frameborder="0" allowfullscreen=""></iframe>
-<iframe src="https://www.jigsawplanet.com/?rc=play&amp;pid=1e0886b92060&amp;view=iframe" style="width:50%;height:600px" frameborder="0" allowfullscreen="" id="frame"></iframe>
-</div>
+    <h1> La leyenda del duende </h1>
+    <p> 
+    La Reina para asegurarse que eres de fiar te hace una última pregunta.
+    De los escudos de las familias reales ¿cuántos poseen estrellas?
+    </p>
+    <div class="frames">
+    <iframe src="https://www.jigsawplanet.com/?rc=play&amp;pid=36fffcff660a&amp;view=iframe" style="width:50%;height:600px" frameborder="0" allowfullscreen=""></iframe>
+    <iframe src="https://www.jigsawplanet.com/?rc=play&amp;pid=1e0886b92060&amp;view=iframe" style="width:50%;height:600px" frameborder="0" allowfullscreen="" id="frame"></iframe>
+    </div>
+
+    @{
+        string path = "Habitacion" + @ViewBag.EstadoDeJuego + ".cshtml";
+        <div class="validacion">
+            <form action="@path">
+                <input type="submit" id="submit" value="Submit">
+            </form>
+        </div>
+    }
 </div>

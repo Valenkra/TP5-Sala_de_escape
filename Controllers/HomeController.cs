@@ -25,6 +25,7 @@ public class HomeController : Controller
     }
     public IActionResult Habitacion1()
     {
+        ViewBag.EstadoDeJuego = Escape.GetEstadoJuego();
         return View();
     }
 
@@ -76,7 +77,8 @@ public class HomeController : Controller
     {
         return View();
     }
-        public IActionResult tutorial()
+    
+    public IActionResult Tutorial()
     {
         return View();
     }
