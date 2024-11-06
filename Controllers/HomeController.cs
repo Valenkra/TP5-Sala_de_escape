@@ -36,7 +36,7 @@ public IActionResult Habitacion(int sala, int respuesta)
     if (Escape.ResolverSala(sala, respuesta))
     {
         // Si la respuesta es correcta, verificar si el juego ha terminado
-        if (Escape.GetEstadoJuego() != 10)
+        if (Escape.GetEstadoJuego() != 9)
         {   
             opciones = Escape.ObtenerOpcionesSala(sala+1);
             pistas = Escape.ObtenerPistasSala(sala+1);

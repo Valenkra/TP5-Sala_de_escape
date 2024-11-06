@@ -49,6 +49,7 @@ body {
   margin-bottom: 60px;
   background-color: rgb(33, 68, 70);
   color: aliceblue;
+  overflow-x: hidden;
 }
 
 .Forms{
