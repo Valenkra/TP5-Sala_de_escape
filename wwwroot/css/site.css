@@ -19,6 +19,7 @@ html {
 
 .logo {
   margin: 5rem;
+  margin-bottom: 3rem;
 }
 
 .frames {
@@ -98,4 +99,93 @@ body {
   background-color: aliceblue;
   border-radius: 12px;
   font-weight: 600;
+}
+
+
+
+h2.question-title {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin: 20px;
+  margin-top: 5rem;
+  color: #ffffff;
+}
+
+/* Estilos del formulario */
+.quiz-form {
+  max-width: 500px;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.option-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.option-input {
+  width: 20px;
+  height: 20px;
+}
+
+.option-label {
+  font-size: 1.1em;
+  color: #555;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.option-label:hover {
+  color: #007bff;
+}
+
+/* Botón de validar */
+.submit-btn {
+  width: 100%;
+  padding: 10px;
+  margin-top: 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Estilos para las pistas */
+.pistas {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 30px;
+}
+
+.pista-item {
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+  margin: 0 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.pista-item:hover {
+  background-color: #218838;
 }

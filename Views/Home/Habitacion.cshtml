@@ -1,0 +1,30 @@
+@{
+    ViewData["Title"] = "La conexión perdida";
+}
+
+<h2 class="question-title">@ViewBag.Pregunta</h2>
+<form asp-controller="Home" asp-action="Habitacion" method="POST" class="quiz-form">
+    <input type="hidden" name="sala" value="@ViewBag.Sala" />
+    <div class="options">
+        <div class="option-item">
+            <input type="radio" name="respuesta" value="0" id="opcion1" class="option-input">
+            <label for="opcion1" class="option-label">@ViewBag.Opcion1</label>
+        </div>
+        <div class="option-item">
+            <input type="radio" name="respuesta" value="1" id="opcion2" class="option-input">
+            <label for="opcion2" class="option-label">@ViewBag.Opcion2</label>
+        </div>
+        <div class="option-item">
+            <input type="radio" name="respuesta" value="2" id="opcion3" class="option-input">
+            <label for="opcion3" class="option-label">@ViewBag.Opcion3</label>
+        </div>
+    </div>
+
+    <button type="submit" class="submit-btn">Validar Respuesta</button>
+</form>
+
+<div class="pistas">
+    <button class="pista-item" onclick="alert('@ViewBag.Pista1')">Pista 1</button>
+    <button class="pista-item" onclick="alert('@ViewBag.Pista2')">Pista 2</button>
+    <button class="pista-item" onclick="alert('@ViewBag.Pista3')">Pista 3</button>
+</div>

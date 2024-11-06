@@ -22,18 +22,61 @@ public class HomeController : Controller
     {
         return View();
     }
-    [HttpPost] public IActionResult Habitacion(int sala, string clave) 
+
+    // Acción POST que valida la respuesta
+ [HttpPost]
+public IActionResult Habitacion(int sala, int respuesta)
+{
+    // Obtener las opciones y las pistas de la sala actual
+    var opciones = Escape.ObtenerOpcionesSala(sala);
+    var pistas = Escape.ObtenerPistasSala(sala);
+    var pregunta = Escape.ObtenerPreguntaSala(sala);
+
+    // Verificar si la respuesta es correcta utilizando el método ResolverSala
+    if (Escape.ResolverSala(sala, respuesta))
     {
-        if(clave == null){
-            clave = "null";
+        // Si la respuesta es correcta, verificar si el juego ha terminado
+        if (Escape.GetEstadoJuego() != 10)
+        {   
+            opciones = Escape.ObtenerOpcionesSala(sala+1);
+            pistas = Escape.ObtenerPistasSala(sala+1);
+            pregunta = Escape.ObtenerPreguntaSala(sala+1);
+            // Pasar las opciones, pistas y pregunta a ViewBag para mostrarlas en la vista
+            ViewBag.Opcion1 = opciones.Item1;
+            ViewBag.Opcion2 = opciones.Item2;
+            ViewBag.Opcion3 = opciones.Item3;
+            ViewBag.Pista1 = pistas.Item1;
+            ViewBag.Pista2 = pistas.Item2;
+            ViewBag.Pista3 = pistas.Item3;
+            ViewBag.Pregunta = pregunta;
+            ViewBag.Sala = sala + 1;
+
+            // Mostrar la vista de la misma sala para continuar el juego
+            return View("Habitacion");
         }
-        Escape.ResolverSala(sala, clave);
-        if(Escape.GetEstadoJuego() != 5){
-            return View("Habitacion"+ Escape.GetEstadoJuego());
-        }else{
+        else
+        {
+            // Si el juego ha terminado, redirigir a la página de victoria
             return RedirectToAction("Victoria");
         }
     }
+    else
+    {
+        // Si la respuesta es incorrecta, seguir mostrando la misma sala con las opciones y pistas
+        ViewBag.Opcion1 = opciones.Item1;
+        ViewBag.Opcion2 = opciones.Item2;
+        ViewBag.Opcion3 = opciones.Item3;
+        ViewBag.Pista1 = pistas.Item1;
+        ViewBag.Pista2 = pistas.Item2;
+        ViewBag.Pista3 = pistas.Item3;
+        ViewBag.Pregunta = pregunta;
+        ViewBag.Sala = sala;
+
+        // Mostrar la misma vista de la habitación
+        return View("Habitacion");
+    }
+}
+
 
     public IActionResult Victoria()
     {

@@ -1,21 +1,51 @@
-<div>
-<h1>Tutorial</h1>
+@{
+    ViewData["Title"] = "Tutorial";
+}
+
+<div class="container px-4 py-5">
+    <h1 class="text-center">Tutorial</h1>
+    
+    <p class="lead text-center">
+        ¡Bienvenido al tutorial de la sala de escape! Para ganar, tendrás que resolver acertijos y encontrar las respuestas correctas. Cada vez que resuelvas un acertijo, podrás escribir tu respuesta en el chatbox para continuar y avanzar a la siguiente sala. Si necesitas ayuda, puedes pedir hasta 3 pistas por acertijo.
+    </p>
+
+    <hr>
+
+    <h3 class="text-center">Ejemplo de acertijo:</h3>
+    <p class="text-center">
+        A continuación, verás un rompecabezas interactivo. ¡Intenta resolverlo!
+    </p>
+
+    <!-- Ejemplo de rompecabezas -->
+    <div class="d-flex justify-content-center">
+        <iframe src="https://www.jigsawplanet.com/?rc=play&amp;pid=1e0886b92060&amp;view=iframe" style="width:70%;height:500px" frameborder="0" allowfullscreen=""></iframe>
+    </div>
+
+    <hr>
+
+    <!-- Formulario para enviar respuesta del acertijo -->
+    <h4 class="text-center">Tu desafío:</h4>
+    <p class="text-center">
+        Responde el siguiente acertijo: <strong>¿Cuántos escudos con estrellas puedes encontrar en el rompecabezas?</strong>
+    </p>
+
+    <form asp-controller="Home" asp-action="Tutorial" method="POST" class="quiz-form d-flex justify-content-center">
+        <input type="text" name="respuesta" id="respuesta" placeholder="Escribe tu respuesta" class="form-control w-50 mx-2">
+        <input type="submit" value="Enviar Respuesta" class="btn btn-primary">
+    </form>
+
+    <hr>
+
+    <!-- Botones para pistas -->
+    <div class="d-flex justify-content-center">
+        <button class="pista-item btn btn-warning mx-2" onclick="alert('Pista: No todos los escudos tienen un símbolo...')">Pista 1</button>
+        <button class="pista-item btn btn-warning mx-2" onclick="alert('Pista: Cuenta las estrellas en los escudos...')">Pista 2</button>
+        <button class="pista-item btn btn-warning mx-2" onclick="alert('Pista: Ni más que 6, ni menos que 3...')">Pista 3</button>
+    </div>
+
+    <hr>
+
+    <p class="text-center">
+        Si tienes alguna pregunta o necesitas más información, no dudes en consultar las pistas o volver a ver el ejemplo. ¡Mucha suerte resolviendo los acertijos y escapando de la sala!
+    </p>
 </div>
-
-<p>Vas a tener que ir resolviendo acertijos para poder ganar y poder salir de la sala de escape. 
-Una vez que lo encuentres vas a tener que escribirlo en un chatbox para poder continuar y pasar a la siguiente sala. 
-En el caso de que lo necesites, podes pedir hasta 3 pistas por acertijo para lograr resolverlo :)</p>
-
-<p>Ejemplo:</p>
-<iframe src="https://www.jigsawplanet.com/?rc=play&amp;pid=1e0886b92060&amp;view=iframe" style="width:50%;height:600px" frameborder="0" allowfullscreen=""></iframe>
-<form action="">
-    <input type="text" id="Numero" name="Numero2" placeholder="Encontrá la cantidad de escudos con estrellas">
-    <input type="submit" id="submit-clave" value="Enviar Respuesta">
-</form>
-
-<div class="pistas-container">
-    <button class="pista-item" onclick="alert('Pista: No todos los escudos tienen algun simbolo...')"> Pista 1 </button>
-    <button class="pista-item" onclick="alert('Pista: Contá las estrellas en los escudos...')"> Pista 2 </button>
-    <button class="pista-item" onclick="alert('Pista: Ni mas que 6 y ni menos que 3...')"> Pista 3 </button>
-</div>
-
